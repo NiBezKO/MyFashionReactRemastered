@@ -1,0 +1,98 @@
+@import '../reset.scss';
+
+.fitem {
+  margin-top: 116px;
+
+  &__title {
+    font-size: 55px;
+    font-weight: 500;
+    line-height: 60px;
+    text-align: left;
+    margin-bottom: 162px;
+  }
+
+  &__item {
+    display: flex;
+  }
+
+  &__img {
+    margin-right: 74px;
+  }
+
+  &__btn-container {
+    display: flex;
+    margin-top: 40px;
+  }
+}
+
+.fitem-inner {
+  text-align: left;
+  margin: 25px 0 25px 0;
+
+  &__price {
+    font-size: 20px;
+    font-weight: 200;
+    margin-bottom: 59px;
+  }
+
+  h4 {
+    font-size: 20px;
+    line-height: 28px;
+    margin-bottom: 40px;
+    font-weight: 500;
+  }
+
+  &__list {
+    display: flex;
+    list-style-type: none;
+    margin-bottom: 30px;
+
+    li {
+      padding: 17px 20px;
+      margin-right: 14px;
+      border: solid 1px black;
+      cursor: pointer;
+      color: black;
+    }
+  }
+
+  .active {
+    background-color: black;
+    color: white;
+    border-color: none;
+  }
+
+  &__order {
+    display: flex;
+  }
+
+  &__quantity {
+    padding: 18px 34px;
+    border: solid 1px black;
+    font-size: 20px;
+    line-height: 28px;
+    font-weight: 400;
+    margin-right: 10px;
+  }
+
+  &__btn {
+    width: 268px;
+    height: 70px;
+    color: white;
+    background-color: #6e9c9f;
+    transition: background-color 0.5 ease-in-out;
+    outline: none;
+    cursor: pointer;
+    border: none;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 23px;
+
+    &:hover {
+      background-color: #509498;
+    }
+    &:active {
+      transform: translateY(1px);
+    }
+  }
+}

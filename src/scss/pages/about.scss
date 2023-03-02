@@ -1,0 +1,70 @@
+@import '../reset.scss';
+
+.about {
+  margin-top: 196px;
+
+  &__title {
+    text-align: left;
+    font-size: 55px;
+    font-weight: 500;
+    @media (max-width: 900px) {
+      text-align: center;
+    }
+  }
+
+  &-content {
+    margin-top: 95px;
+    overflow: hidden;
+
+    &__item {
+      display: flex;
+      animation-name: slipping;
+      animation-duration: 1.5s;
+
+      @keyframes slipping {
+        from {
+          transform: translateX(100%);
+        }
+
+        to {
+          transform: translateX(0%);
+        }
+      }
+      @media (max-width: 900px) {
+        display: block;
+      }
+    }
+
+    &__inner {
+      text-align: left;
+      padding-right: 123px;
+      @media (max-width: 900px) {
+        padding-right: 0;
+      }
+    }
+
+    &__title {
+      padding: 46px 0 46px 0;
+      font-size: 25px;
+      line-height: 35px;
+      @media (max-width: 900px) {
+        text-align: center;
+      }
+    }
+
+    &__description {
+      font-size: 17px;
+      font-weight: 500;
+      line-height: 23px;
+      @media (max-width: 900px) {
+        margin-bottom: 20px;
+        text-align: center;
+      }
+    }
+
+    &__img {
+      width: 100%;
+      max-width: 100%;
+    }
+  }
+}

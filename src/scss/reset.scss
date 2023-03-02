@@ -1,0 +1,43 @@
+body {
+  font-family: 'Raleway', sans-serif;
+  font-size: 16px;
+  text-align: center;
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+li,
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+$white: rgb(255, 255, 255);
+$black: #000;
+$font-family: 'Inter', sans-serif;
+$colorHeader: #96b4b6;
+$colorButton: #6e9c9f;
+$colorNav: rgb(0, 0, 0);
+$colorNavHover: #509498;
+$colorButtonHover: #509498;
+$colorIntroTitle: #000;
+$backgroundHoverCart: #509498;
+$footerBackgroundColor: #f1eadc;

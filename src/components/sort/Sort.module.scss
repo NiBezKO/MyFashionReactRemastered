@@ -1,0 +1,43 @@
+.sort {
+  display: flex;
+  justify-content: flex-end;
+
+  &__inner {
+    flex-direction: column;
+    position: relative;
+  }
+  &__label {
+    display: flex;
+
+    span {
+      border-bottom: dashed 2px black;
+      cursor: pointer;
+    }
+  }
+
+  &__popup {
+    margin-top: 15px;
+    width: 200px;
+    z-index: 10;
+    background-color: rgb(235, 232, 229);
+    height: auto;
+    position: absolute;
+    right: 0;
+    overflow: hidden;
+  }
+
+  &__list {
+    list-style-type: none;
+    text-align: left;
+
+    li {
+      font-size: 17px;
+      cursor: pointer;
+      margin-bottom: 10px;
+    }
+
+    .active {
+      background-color: bisque;
+    }
+  }
+}

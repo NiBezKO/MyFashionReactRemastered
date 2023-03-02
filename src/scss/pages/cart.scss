@@ -1,0 +1,122 @@
+@import '../reset.scss';
+
+.cart {
+  margin-top: 196px;
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__clear {
+    display: flex;
+    font-size: 18px;
+    cursor: pointer;
+    font-weight: 500;
+    opacity: 0.7;
+    transition: opacity 0.5s ease-in-out;
+    &:hover {
+      opacity: 1;
+    }
+    svg {
+      fill: black;
+    }
+  }
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin: 15px 0;
+  align-items: center;
+
+  &__img {
+    width: 136px;
+    height: 205px;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__title {
+    font-size: 18px;
+    font-weight: 500;
+  }
+
+  &__count {
+    button {
+      width: 40px;
+      height: 40px;
+      border-radius: 30px;
+      background-color: $colorButton;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      transition: background-color 0.5s ease-in-out;
+      &:hover {
+        background-color: $colorButtonHover;
+      }
+      &:active {
+        transform: translateY(1px);
+      }
+
+      svg {
+        fill: $white;
+      }
+    }
+  }
+
+  &__remove {
+    svg {
+      width: 35px;
+      height: 35px;
+      cursor: pointer;
+      fill: $colorButton;
+      transition: fill 0.5s ease-in-out;
+      &:hover {
+        fill: $colorButtonHover;
+      }
+      &:active {
+        transform: translateY(1px);
+      }
+    }
+  }
+}
+
+.cart__bottom-details {
+  display: flex;
+  justify-content: space-between;
+  margin: 30px 0;
+
+  span {
+    font-size: 20px;
+    font-weight: 500;
+  }
+}
+
+.cart_bottom-buttons {
+  display: flex;
+  justify-content: space-between;
+
+  button {
+    width: 243px;
+    height: 63px;
+    background-color: $colorButton;
+    border: 1px linear #000;
+    cursor: pointer;
+    font-size: 17px;
+    color: #fff;
+    transition: background-color 0.5s ease-in-out;
+    border: none;
+    outline: none;
+    &:hover {
+      background-color: $colorButtonHover;
+    }
+    &:active {
+      transform: translateY(1px);
+    }
+  }
+}
