@@ -5,11 +5,17 @@ import Skeleton from '../components/Skeleton';
 import Sort from '../components/sort';
 import axios from 'axios';
 
+import { useSelector, useDispatch } from 'react-redux';
+import { setCategoryId } from '../redux/slices/filterSlice';
+
 const Shop = () => {
+  const categoryId = useSelector((state) => state.filter.categoryId);
+  const dispatch = useDispatch();
+
   const [product, setProducts] = React.useState([]);
   const [searchValue, setSearchValue] = React.useState('');
   const [isLoading, setIsLoading] = React.useState(true);
-  const [categoryId, setCategoryId] = React.useState(0);
+
   const [sortType, setSortType] = React.useState({
     name: 'популярности',
     sortProperty: 'rating',
@@ -21,6 +27,10 @@ const Shop = () => {
 
   const clearInput = () => {
     setSearchValue('');
+  };
+
+  const onClickCategory = (id) => {
+    dispatch(setCategoryId(id));
   };
 
   React.useEffect(() => {
@@ -76,11 +86,7 @@ const Shop = () => {
           </div>
         </div>
         <div className="shop__catalog-container">
-          <Categories
-            categoryId={categoryId}
-            setCategoryId={setCategoryId}
-            onClickCategory={(i) => setCategoryId(i)}
-          />
+          <Categories categoryId={categoryId} onClickCategory={onClickCategory} />
           <Sort sortType={sortType} onCnangeSort={(i) => setSortType(i)} />
         </div>
         <ul className="shopList">

@@ -1,50 +1,51 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
-    <footer class="footer">
-      <div class="container">
-        <div class="footer__inner">
-          <p class="footer__text">
+    <footer className="footer">
+      <div className="container">
+        <div className="footer__inner">
+          <p className="footer__text">
             © Все права защищены <br />
             Политика конфиденциальности <br />
             Публичная оферта
           </p>
-          <ul class="footer__list footer-list">
-            <li class="footer-list__item">
-              <a class="footer-list__inner" href="#">
+          <ul className="footer__list footer-list">
+            <li className="footer-list__item">
+              <Link to="/" className="footer-list__inner">
                 Главная
-              </a>
+              </Link>
             </li>
-            <li class="footer-list__item">
-              <a class="footer-list__inner" href="#">
+            <li className="footer-list__item">
+              <Link to="/shop" className="footer-list__inner">
                 Магазин
-              </a>
+              </Link>
             </li>
-            <li class="footer-list__item">
-              <a class="footer-list__inner" href="#">
+            <li className="footer-list__item">
+              <Link to="/about" className="footer-list__inner">
                 О бренде
-              </a>
+              </Link>
             </li>
-            <li class="footer-list__item">
-              <a class="footer-list__inner" href="#">
+            <li className="footer-list__item">
+              <Link to="/contacts" className="footer-list__inner">
                 Контакты
-              </a>
+              </Link>
             </li>
           </ul>
-          <div class="footer-right__list">
-            <p class="footer__phone">+7 (495) 823-54-12</p>
-            <p class="footer__email">mail@email.com</p>
-            <ul class="footer__social footer-social">
-              <li class="footer-social__item">
-                <a href="#" class="footer-social__inner">
+          <div className="footer-right__list">
+            <p className="footer__phone">+7 (495) 823-54-12</p>
+            <p className="footer__email">mail@email.com</p>
+            <ul className="footer__social footer-social">
+              <li className="footer-social__item">
+                <Link to="/instagram" className="footer-social__inner">
                   <svg
-                    class="footer-social__svg"
+                    className="footer-social__svg"
                     width="22"
                     height="23"
                     viewBox="0 0 22 23"
                     xmlns="http://www.w3.org/2000/svg">
-                    <g clip-path="url(#clip0_4_278)">
+                    <g clipPath="url(#clip0_4_278)">
                       <path
                         d="M15.6094 0.5H6.39066C2.86683 0.5 0 3.36683 0 6.89066V16.1093C0 19.6332 2.86683 22.5 6.39066 22.5H15.6093C19.1332 22.5 22 19.6332 22 16.1094V6.89066C22 3.36683 19.1332 0.5 15.6094 0.5ZM20.2812 16.1093C20.2812 18.6854 18.1854 20.7812 15.6094 20.7812H6.39066C3.81455 20.7812 1.71875 18.6854 1.71875 16.1094V6.89066C1.71875 4.31455 3.81455 2.21875 6.39066 2.21875H15.6093C18.1854 2.21875 20.2812 4.31455 20.2812 6.89066V16.1093Z"
                         fill="black"
@@ -59,22 +60,22 @@ const Footer = () => {
                       />
                     </g>
                     <defs>
-                      <clipPath id="clip0_4_278">
+                      <clippath id="clip0_4_278">
                         <rect width="22" height="22" fill="white" transform="translate(0 0.5)" />
-                      </clipPath>
+                      </clippath>
                     </defs>
                   </svg>
-                </a>
+                </Link>
               </li>
-              <li class="footer-social__item">
-                <a href="#" class="footer-social__inner">
+              <li className="footer-social__item">
+                <Link to="facebook" className="footer-social__inner">
                   <svg
-                    class="footer-social__svg"
+                    className="footer-social__svg"
                     width="21"
                     height="21"
                     viewBox="0 0 21 21"
                     xmlns="http://www.w3.org/2000/svg">
-                    <g clip-path="url(#clip0_4_303)">
+                    <g clipPath="url(#clip0_4_303)">
                       <path
                         d="M18.5391 0H2.46094C1.1039 0 0 1.1039 0 2.46094V18.5391C0 19.8961 1.1039 21 2.46094 21H18.5391C19.8961 21 21 19.8961 21 18.5391V2.46094C21 1.1039 19.8961 0 18.5391 0ZM19.3594 18.5391C19.3594 18.9914 18.9914 19.3594 18.5391 19.3594H13.6992V13.3711H16.3253L16.6314 10.8281H13.6992V8.08008C13.6992 7.37865 14.2283 6.84961 14.9297 6.84961H16.7754V4.4707C16.2896 4.40213 15.3525 4.30664 14.9297 4.30664C13.973 4.30664 13.0141 4.71023 12.2989 5.41374C11.5621 6.13857 11.1562 7.08801 11.1562 8.08729V10.8281H8.49023V13.3711H11.1562V19.3594H2.46094C2.00864 19.3594 1.64062 18.9914 1.64062 18.5391V2.46094C1.64062 2.00864 2.00864 1.64062 2.46094 1.64062H18.5391C18.9914 1.64062 19.3594 2.00864 19.3594 2.46094V18.5391Z"
                         fill="black"
@@ -86,12 +87,12 @@ const Footer = () => {
                       </clipPath>
                     </defs>
                   </svg>
-                </a>
+                </Link>
               </li>
-              <li class="footer-social__item">
-                <a class="footer-social__inner" href="#">
+              <li className="footer-social__item">
+                <Link to="twitter" className="footer-social__inner">
                   <svg
-                    class="footer-social__svg"
+                    className="footer-social__svg"
                     width="23"
                     height="23"
                     viewBox="0 0 23 23"
@@ -101,10 +102,14 @@ const Footer = () => {
                       fill="black"
                     />
                   </svg>
-                </a>
+                </Link>
               </li>
             </ul>
-            <img class="footer__mastercard" src="img/visa-mastercard.png" alt="visa-mastercard" />
+            <img
+              className="footer__mastercard"
+              src="img/visa-mastercard.png"
+              alt="visa-mastercard"
+            />
           </div>
         </div>
       </div>
