@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useRef } from 'react';
+
 import ItemList from '../components/ItemList';
 import Categories from '../components/Categories';
 import Skeleton from '../components/Skeleton';
@@ -7,19 +8,18 @@ import axios from 'axios';
 
 import { useSelector, useDispatch } from 'react-redux';
 import { setCategoryId } from '../redux/slices/filterSlice';
+//import { setProducts } from '../redux/slices/productSlice';
 
 const Shop = () => {
-  const categoryId = useSelector((state) => state.filter.categoryId);
+  const { categoryId, sort } = useSelector((state) => state.filter);
+  const sortType = sort.sortProperty;
+  //const product = useSelector((state) => state.products.product);
   const dispatch = useDispatch();
 
   const [product, setProducts] = React.useState([]);
   const [searchValue, setSearchValue] = React.useState('');
   const [isLoading, setIsLoading] = React.useState(true);
-
-  const [sortType, setSortType] = React.useState({
-    name: 'популярности',
-    sortProperty: 'rating',
-  });
+  const inputRef = useRef();
 
   const onChangeValue = (event) => {
     setSearchValue(event.target.value);
@@ -27,16 +27,39 @@ const Shop = () => {
 
   const clearInput = () => {
     setSearchValue('');
+    inputRef.current.focus();
   };
 
   const onClickCategory = (id) => {
     dispatch(setCategoryId(id));
   };
 
+  // const getProducts = React.useCallback(() => {
+  //   setIsLoading(true);
+  //   const order = sortType.sortProperty.includes('-') ? 'asc' : 'desc';
+  //   const sortBy = sortType.sortProperty.replace('-', '');
+  //   const category = categoryId > 0 ? `category=${categoryId}` : '';
+
+  //   try {
+  //     const res = axios.get(
+  //       `https://637fa1022f8f56e28e925aec.mockapi.io/clothingList?${category}&sortBy=${sortBy}&order=${order}`,
+  //     );
+  //     dispatch(setProducts(res.data));
+  //   } catch (error) {
+  //     alert('Не удалось загрузить товары');
+  //   } finally {
+  //     setIsLoading(false);
+  //   }
+  // }, [categoryId, sortType, searchValue ]);
+
+  // React.useEffect(() => {
+  //   getProducts();
+  // }, [getProducts]);
+
   React.useEffect(() => {
     setIsLoading(true);
-    const order = sortType.sortProperty.includes('-') ? 'asc' : 'desc';
-    const sortBy = sortType.sortProperty.replace('-', '');
+    const order = sortType.includes('-') ? 'asc' : 'desc';
+    const sortBy = sortType.replace('-', '');
     const category = categoryId > 0 ? `category=${categoryId}` : '';
     try {
       axios
@@ -67,6 +90,7 @@ const Shop = () => {
               </svg>
               <input
                 value={searchValue}
+                ref={inputRef}
                 onChange={onChangeValue}
                 placeholder="Найти..."
                 className="shop-top__input"
@@ -87,7 +111,7 @@ const Shop = () => {
         </div>
         <div className="shop__catalog-container">
           <Categories categoryId={categoryId} onClickCategory={onClickCategory} />
-          <Sort sortType={sortType} onCnangeSort={(i) => setSortType(i)} />
+          <Sort />
         </div>
         <ul className="shopList">
           {isLoading

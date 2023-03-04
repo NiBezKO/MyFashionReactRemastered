@@ -2,6 +2,12 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const ItemList = ({ id, imageUrl, title, sizes, price, category, rating }) => {
+  const [size, setSize] = React.useState(0);
+
+  const onChangeSize = (i) => {
+    setSize(i);
+  };
+
   return (
     <li className="shopList__item shopList-item">
       <Link to={`/shop/${id}`}>
@@ -20,8 +26,17 @@ const ItemList = ({ id, imageUrl, title, sizes, price, category, rating }) => {
           </div>
         </div>
       </Link>
+      <h3 className="shopList-item__title">{title}</h3>
       <div className="shopList-item__inner">
-        <h3 className="shopList-item__title">{title}</h3>
+        <div className="shopList-item__sizes">
+          <ul>
+            {sizes.map((item, i) => (
+              <li key={i} onClick={() => onChangeSize(i)} className={size === i ? 'active' : ''}>
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
         <span className="shopList-item__price">Цена: {price}</span>
         <button className="shopList-item__btn">В корзину</button>
       </div>

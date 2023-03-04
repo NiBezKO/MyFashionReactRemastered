@@ -53,11 +53,11 @@ const FullItem = ({ sizes }) => {
                       {item.sizes}
                     </li>
                   ))} */}
-                  {/* <li class="active">S</li>
+                  <li class="active">S</li>
                   <li>M</li>
                   <li>L</li>
                   <li>XL</li>
-                  <li>XXL</li> */}
+                  <li>XXL</li>
                 </ul>
 
                 <div class="fitem-inner__order">
