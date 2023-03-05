@@ -1,11 +1,24 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { addItem } from '../redux/slices/cartSlice';
 
-const ItemList = ({ id, imageUrl, title, sizes, price, category, rating }) => {
-  const [size, setSize] = React.useState(0);
+const ItemList = ({ id, imageUrl, title, sizes, price }) => {
+  const dispatch = useDispatch();
+  const cartItem = useSelector((state) => state.cart.items.find((obj) => obj.id === id));
+  const [activeSize, setActiveSize] = React.useState(0);
 
-  const onChangeSize = (i) => {
-    setSize(i);
+  const addedCount = cartItem ? cartItem.count : 0;
+
+  const onClickAdd = () => {
+    const item = {
+      id,
+      title,
+      imageUrl,
+      price,
+      size: activeSize,
+    };
+    dispatch(addItem(item));
   };
 
   return (
@@ -31,14 +44,19 @@ const ItemList = ({ id, imageUrl, title, sizes, price, category, rating }) => {
         <div className="shopList-item__sizes">
           <ul>
             {sizes.map((item, i) => (
-              <li key={i} onClick={() => onChangeSize(i)} className={size === i ? 'active' : ''}>
+              <li
+                key={i}
+                onClick={() => setActiveSize(i)}
+                className={activeSize === i ? 'active' : ''}>
                 {item}
               </li>
             ))}
           </ul>
         </div>
         <span className="shopList-item__price">Цена: {price}</span>
-        <button className="shopList-item__btn">В корзину</button>
+        <button onClick={onClickAdd} className="shopList-item__btn">
+          В корзину {addedCount > 0 && <span>{addedCount}</span>}
+        </button>
       </div>
     </li>
   );

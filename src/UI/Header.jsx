@@ -1,7 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 const Header = () => {
+  const { items, totalPrice } = useSelector((state) => state.cart);
+  const totalCount = items.reduce((sum, item) => sum + item.count, 0);
   return (
     <header className="header">
       <div className="header__inner header-inner">
@@ -55,13 +58,18 @@ const Header = () => {
         <div className="burger">
           <span className="burger__content"></span>
         </div>
+
         <div className="header__cart header-cart">
+          <div className="header-cart__totalprice">
+            {totalPrice}
+            <span>р</span>
+          </div>
           <Link to="/cart">
             <svg className="header-cart__svg" xmlns="http://www.w3.org/2000/svg">
               <path d="M19,7H16V6A4,4,0,0,0,8,6V7H5A1,1,0,0,0,4,8V19a3,3,0,0,0,3,3H17a3,3,0,0,0,3-3V8A1,1,0,0,0,19,7ZM10,6a2,2,0,0,1,4,0V7H10Zm8,13a1,1,0,0,1-1,1H7a1,1,0,0,1-1-1V9H8v1a1,1,0,0,0,2,0V9h4v1a1,1,0,0,0,2,0V9h2Z" />
             </svg>
           </Link>
-          <span className="header-cart__count">3</span>
+          <span className="header-cart__count">{totalCount}</span>
         </div>
       </div>
     </header>
