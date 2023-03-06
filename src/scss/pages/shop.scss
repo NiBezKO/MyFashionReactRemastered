@@ -7,17 +7,21 @@
     display: flex;
     justify-content: space-between;
     align-content: center;
-
+    margin-bottom: 264px;
+    @media (max-width: 500px) {
+      display: block;
+      margin-bottom: 100px;
+    }
     &__title {
       font-size: 55px;
       line-height: 60px;
       font-weight: 500;
       text-align: left;
-      margin-bottom: 264px;
     }
 
     &__search {
       position: relative;
+      margin-top: 13px;
     }
 
     &__icon {
@@ -30,6 +34,9 @@
       cursor: pointer;
       &:hover {
         fill: $colorButtonHover;
+      }
+      @media (max-width: 500px) {
+        display: none;
       }
     }
 
@@ -46,6 +53,11 @@
       &:is(:active, :hover) {
         width: 200px;
       }
+
+      @media (max-width: 500px) {
+        margin-right: 0;
+        left: 0;
+      }
     }
 
     &__clear {
@@ -59,6 +71,9 @@
       &:hover {
         fill: $colorButtonHover;
       }
+      @media (max-width: 500px) {
+        right: 69px;
+      }
     }
   }
 }
@@ -67,11 +82,18 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  @media (max-width: 800px) {
+    display: block;
+  }
 }
 
 .category {
   display: flex;
   list-style-type: none;
+  @media (max-width: 500px) {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
 
   li {
     width: 191px;
@@ -83,6 +105,11 @@
     color: #000000;
     cursor: pointer;
     margin-right: 15px;
+    @media (max-width: 500px) {
+      width: 100px;
+      height: 35px;
+      font-size: 14px;
+    }
   }
 
   .active {
@@ -128,6 +155,7 @@
     width: 100%;
     max-width: 100%;
     height: auto;
+    object-fit: contain;
     cursor: pointer;
   }
 

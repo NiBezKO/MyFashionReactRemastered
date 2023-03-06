@@ -1,7 +1,9 @@
 import React from 'react';
+import CartEmpty from '../components/CartEmpty';
 import CartItem from '../components/CartItem';
 import { useSelector, useDispatch } from 'react-redux';
 import { clearItems } from '../redux/slices/cartSlice';
+import { Link } from 'react-router-dom';
 
 const Cart = () => {
   const dispatch = useDispatch();
@@ -14,9 +16,9 @@ const Cart = () => {
     }
   };
 
-  // if (items == 0) {
-  //   return <CartEmpty />;
-  // }
+  if (items == 0) {
+    return <CartEmpty />;
+  }
 
   return (
     <main>
@@ -93,22 +95,24 @@ const Cart = () => {
             </span>
           </div>
           <div className="cart_bottom-buttons">
-            <button>
-              <svg
-                width="8"
-                height="14"
-                viewBox="0 0 8 14"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="M7 13L1 6.93015L6.86175 1"
-                  stroke="#D3D3D3"
-                  stroke-width="1.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"></path>
-              </svg>
-              Назад
-            </button>
+            <Link to="/shop">
+              <button>
+                <svg
+                  width="8"
+                  height="14"
+                  viewBox="0 0 8 14"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M7 13L1 6.93015L6.86175 1"
+                    stroke="#D3D3D3"
+                    stroke-width="1.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"></path>
+                </svg>
+                Назад
+              </button>
+            </Link>
             <button>Оплатить</button>
           </div>
         </div>
