@@ -6,7 +6,7 @@ const CartItem = ({ id, title, price, imageUrl, size, count }) => {
   const dispatch = useDispatch();
 
   const onClickPlus = () => {
-    dispatch(addItem({ id }));
+    dispatch(addItem({ id, size }));
   };
 
   const onClickMinus = () => {
