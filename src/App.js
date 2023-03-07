@@ -13,26 +13,21 @@ import Cart from './Pages/Cart';
 import NotFound from './Pages/NotFound';
 import FullItem from './Pages/FullItem';
 
-export const AppContext = React.createContext();
-console.log(AppContext);
-
 function App() {
   return (
-    <AppContext.Provider value={{}}>
-      <div className="App">
-        <Header />
-        <Routes>
-          <Route path="/" element={<Main />} />
-          <Route path="/shop" element={<Shop />} />
-          <Route path="/shop/:id" element={<FullItem />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contacts" element={<Contacts />} />
-          <Route path="/cart" element={<Cart />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-        <Footer />
-      </div>
-    </AppContext.Provider>
+    <div className="App">
+      <Header />
+      <Routes>
+        <Route path="/" element={<Main />} />
+        <Route path="/shop" element={<Shop />} />
+        <Route path="/shop/:id" element={<FullItem />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/contacts" element={<Contacts />} />
+        <Route path="/cart" element={<Cart />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+      <Footer />
+    </div>
   );
 }
 

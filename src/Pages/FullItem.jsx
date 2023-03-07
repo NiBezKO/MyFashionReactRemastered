@@ -9,7 +9,7 @@ const FullItem = ({ sizes }) => {
   const { id } = useParams();
 
   const [pageItem, setPageItem] = React.useState();
-  const [activeSize, setActiveSize] = React.useState();
+  //const [activeSize, setActiveSize] = React.useState();
 
   React.useEffect(() => {
     async function fetchItem() {
@@ -29,9 +29,9 @@ const FullItem = ({ sizes }) => {
     return 'Загрузка...';
   }
 
-  const onChangeSize = (i) => {
-    setActiveSize(i);
-  };
+  // const onChangeSize = (i) => {
+  //   setActiveSize(i);
+  // };
 
   return (
     <main>

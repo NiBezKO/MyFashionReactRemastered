@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { addItem } from '../redux/slices/cartSlice';
 
+const sizeCount = ['S', 'M', 'L', 'XL', 'XXL'];
+
 const ItemList = ({ id, imageUrl, title, sizes, price }) => {
   const dispatch = useDispatch();
   const cartItem = useSelector((state) => state.cart.items.find((obj) => obj.id === id));
@@ -16,7 +18,8 @@ const ItemList = ({ id, imageUrl, title, sizes, price }) => {
       title,
       imageUrl,
       price,
-      size: activeSize,
+      // size:  activeSize,
+      size: sizeCount[activeSize],
     };
     dispatch(addItem(item));
   };

@@ -13,10 +13,10 @@ import { setCategoryId } from '../redux/slices/filterSlice';
 const Shop = () => {
   const { categoryId, sort } = useSelector((state) => state.filter);
   const sortType = sort.sortProperty;
-  //const product = useSelector((state) => state.products.product);
+  //const products = useSelector((state) => state.products.products);
   const dispatch = useDispatch();
 
-  const [product, setProducts] = React.useState([]);
+  const [products, setProducts] = React.useState([]);
   const [searchValue, setSearchValue] = React.useState('');
   const [isLoading, setIsLoading] = React.useState(true);
   const inputRef = useRef();
@@ -34,23 +34,25 @@ const Shop = () => {
     dispatch(setCategoryId(id));
   };
 
-  // const getProducts = React.useCallback(() => {
-  //   setIsLoading(true);
-  //   const order = sortType.sortProperty.includes('-') ? 'asc' : 'desc';
-  //   const sortBy = sortType.sortProperty.replace('-', '');
-  //   const category = categoryId > 0 ? `category=${categoryId}` : '';
+  // const getProducts =
+  //   (async () => {
+  //     setIsLoading(true);
+  //     const order = sortType.sortProperty.includes('-') ? 'asc' : 'desc';
+  //     const sortBy = sortType.sortProperty.replace('-', '');
+  //     const category = categoryId > 0 ? `category=${categoryId}` : '';
 
-  //   try {
-  //     const res = axios.get(
-  //       `https://637fa1022f8f56e28e925aec.mockapi.io/clothingList?${category}&sortBy=${sortBy}&order=${order}`,
-  //     );
-  //     dispatch(setProducts(res.data));
-  //   } catch (error) {
-  //     alert('Не удалось загрузить товары');
-  //   } finally {
-  //     setIsLoading(false);
-  //   }
-  // }, [categoryId, sortType, searchValue ]);
+  //     try {
+  //       const res = await axios.get(
+  //         `https://637fa1022f8f56e28e925aec.mockapi.io/clothingList?${category}&sortBy=${sortBy}&order=${order}`,
+  //       );
+  //       dispatch(setProducts(res.data));
+  //     } catch (error) {
+  //       alert('Не удалось загрузить товары');
+  //     } finally {
+  //       setIsLoading(false);
+  //     }
+  //   },
+  //   [categoryId, dispatch, sortType.sortProperty]);
 
   // React.useEffect(() => {
   //   getProducts();
@@ -116,7 +118,7 @@ const Shop = () => {
         <ul className="shopList">
           {isLoading
             ? [...new Array(6)].map((_, index) => <Skeleton key={index} />)
-            : product
+            : products
                 .filter((item) => {
                   if (item.title.toLowerCase().includes(searchValue.toLowerCase())) {
                     return true;
