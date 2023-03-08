@@ -1,6 +1,8 @@
 import React from 'react';
 import CartEmpty from '../components/CartEmpty';
 import CartItem from '../components/CartItem';
+import Info from '../components/Info';
+import LoginPage from './LoginPage';
 import { useSelector, useDispatch } from 'react-redux';
 import { clearItems } from '../redux/slices/cartSlice';
 import { Link } from 'react-router-dom';
@@ -9,10 +11,19 @@ const Cart = () => {
   const dispatch = useDispatch();
   const { items, totalPrice } = useSelector((state) => state.cart);
   const totalCount = items.reduce((sum, item) => sum + item.count, 0);
+  const loggedIn = useSelector((state) => state.authorization.loginIn);
 
   const onClickClearCart = () => {
     if (window.confirm('Очистить корзину?')) {
       dispatch(clearItems());
+    }
+  };
+
+  const onCLickPay = () => {
+    if (loggedIn) {
+      dispatch(clearItems()) && <Info />;
+    } else {
+      dispatch(clearItems()) && <LoginPage />;
     }
   };
 
@@ -115,7 +126,7 @@ const Cart = () => {
                 Назад
               </button>
             </Link>
-            <button>Оплатить</button>
+            <button onClick={onCLickPay}>Оплатить</button>
           </div>
         </div>
       </div>

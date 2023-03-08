@@ -12,6 +12,7 @@ import Contacts from './Pages/Contacts';
 import Cart from './Pages/Cart';
 import NotFound from './Pages/NotFound';
 import FullItem from './Pages/FullItem';
+import LoginPage from './Pages/LoginPage';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/contacts" element={<Contacts />} />
         <Route path="/cart" element={<Cart />} />
+        <Route path="/login" element={<LoginPage />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
