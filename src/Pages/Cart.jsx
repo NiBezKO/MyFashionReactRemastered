@@ -3,6 +3,7 @@ import CartEmpty from '../components/CartEmpty';
 import CartItem from '../components/CartItem';
 import Info from '../components/Info';
 import LoginPage from './LoginPage';
+// import { Route } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { clearItems } from '../redux/slices/cartSlice';
 import { Link } from 'react-router-dom';
@@ -19,18 +20,15 @@ const Cart = () => {
     }
   };
 
-  const onCLickPay = () => {
-    if (loggedIn) {
-      dispatch(clearItems()) && <Info />;
-    } else {
-      dispatch(clearItems()) && <LoginPage />;
-    }
-  };
-
   if (items == 0) {
     return <CartEmpty />;
   }
 
+  const onCLickPay = (event) => {
+    event.preventDefault();
+    loggedIn ? <Info /> && dispatch(clearItems()) : <LoginPage /> && dispatch(clearItems());
+  };
+  //loggedIn ? <CartEmpty /> && dispatch(clearItems()) : <Route path="/login" />
   return (
     <main>
       <div className="container">

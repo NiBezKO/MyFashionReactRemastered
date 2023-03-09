@@ -6,8 +6,13 @@ const LoginPage = () => {
   const dispatch = useDispatch();
   const loggedIn = useSelector((state) => state.authorization.loginIn);
   //const [isLoggedIn, setIsLoggedIn] = React.useState(false);
-  const [login, setLogin] = React.useState({ user: 'user' });
-  const [pass, setPass] = React.useState({ password: 'pass' });
+  const [login, setLogin] = React.useState('');
+  const [pass, setPass] = React.useState('');
+
+  const user = {
+    login: 'user',
+    pass: 'pass',
+  };
 
   const onChangeLogin = (event) => {
     setLogin(event.target.value);
@@ -18,9 +23,13 @@ const LoginPage = () => {
   };
 
   const addHandler = () => {
+    if (user) {
+      dispatch(setLoginIn(true));
+    } else {
+      alert('неправильно введён логин или пароль');
+    }
     // const userName = login.current.value;
     // const userPassword = pass.current.value;
-    dispatch(setLoginIn(true));
   };
   return (
     <div className="loginPage">
