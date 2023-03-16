@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { addItem } from '../redux/slices/cartSlice';
-import { addToFavorite } from '../redux/slices/favorites';
+import { addToFavorite } from '../redux/slices/favoritesSlice';
 
 const sizeCount = ['S', 'M', 'L', 'XL', 'XXL'];
 
