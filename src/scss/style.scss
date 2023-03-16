@@ -7,6 +7,7 @@
 @import './pages/cartEmpty.scss';
 @import './pages/loginPage.scss';
 @import './pages/info.scss';
+@import './pages/favorites.scss';
 
 /* header
 =====================================*/
@@ -29,13 +30,13 @@
     @media (max-width: 500px) {
       margin: 0 5px;
     }
-  }
 
-  svg {
-    width: 120px;
-    height: 38px;
-    @media (max-width: 500px) {
-      width: 80px;
+    .logo {
+      width: 120px;
+      height: 38px;
+      @media (max-width: 500px) {
+        width: 80px;
+      }
     }
   }
 
@@ -46,6 +47,16 @@
       cursor: pointer;
       &:hover {
         fill: $colorNavHover;
+      }
+    }
+  }
+
+  &-favorites {
+    &__icon {
+      opacity: 0.7;
+      transition: opacity 0.5s ease-in-out;
+      &:hover {
+        opacity: 1;
       }
     }
   }
@@ -130,6 +141,24 @@
     }
   }
 }
+
+.burger__close {
+  display: none;
+  cursor: pointer;
+  @media (max-width: 800px) {
+    & {
+      display: block;
+      width: 41px;
+      height: 28px;
+      fill: $black;
+
+      &:hover {
+        fill: $colorNavHover;
+      }
+    }
+  }
+}
+/*========================================*/
 
 .phone {
   display: flex;

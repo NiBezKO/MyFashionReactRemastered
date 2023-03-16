@@ -219,6 +219,13 @@
   &-item__price {
     margin-top: 7px;
     margin-bottom: 10px;
+    flex-grow: 1;
+  }
+
+  &-item__bottom {
+    display: flex;
+    justify-content: space-between;
+    margin-top: auto;
   }
 
   &-item__btn {
@@ -235,6 +242,18 @@
     }
     &:active {
       transform: translateY(1px);
+    }
+  }
+
+  &-item__favorites {
+    width: 60px;
+    height: 30px;
+    cursor: pointer;
+    fill: #f00;
+    opacity: 0.6;
+    transition: opacity 0.5 ease-in-out;
+    &:hover {
+      opacity: 1;
     }
   }
 }

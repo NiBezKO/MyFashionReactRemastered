@@ -3,6 +3,7 @@ import filter from './slices/filterSlice';
 import products from './slices/filterSlice';
 import cart from './slices/cartSlice';
 import authorization from './slices/authorizationSlice';
+import liked from './slices/favorites';
 
 export const store = configureStore({
   reducer: {
@@ -10,5 +11,6 @@ export const store = configureStore({
     products,
     cart,
     authorization,
+    liked,
   },
 });

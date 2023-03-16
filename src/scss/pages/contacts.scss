@@ -95,18 +95,22 @@
     line-height: 140%;
     letter-spacing: 0.02em;
     width: 100%;
+    outline: none;
     border: none;
     border-bottom: 1px rgba(0, 0, 0, 0.5) solid;
     height: 40px;
     color: #868686;
     transition: border-color 0.1s linear;
     margin-bottom: 35px;
+    padding-left: 10px;
   }
 
   textarea {
     display: block;
+    font-size: 17px;
     max-width: 443px;
     height: 134px;
+    padding-left: 10px;
     padding-bottom: 100px;
     border: none;
     outline: none;
