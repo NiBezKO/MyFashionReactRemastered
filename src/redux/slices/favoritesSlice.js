@@ -11,9 +11,11 @@ export const favoritesSlice = createSlice({
     addToFavorite(state, action) {
       const findItem = state.favoritesItems.find((obj) => obj.id === state.payload.id);
       if (findItem) {
-        findItem.count--;
+        findItem.filter((obj) => obj.id === action.payload.id);
       } else {
-        state.favoritesItems.push(action.payload);
+        state.favoritesItems.push({
+          ...action.payload,
+        });
       }
     },
     removeFavorite(state, action) {

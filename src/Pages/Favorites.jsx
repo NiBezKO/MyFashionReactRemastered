@@ -1,9 +1,8 @@
 import React from 'react';
 import ItemList from '../components/ItemList';
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 
 const Favorites = () => {
-  const dispatch = useDispatch();
   const { favoritesItems } = useSelector((state) => state.liked);
 
   return (
