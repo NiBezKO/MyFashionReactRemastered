@@ -231,10 +231,21 @@
   background-size: cover;
   background-attachment: fixed;
 
+  @media (max-width: 1200px) {
+    background-position: 50%;
+  }
+
+  @media (max-width: 500px) {
+    background-position: 25%;
+  }
+
   &__inner {
     padding: 400px 0;
     animation-name: visible;
     animation-duration: 4s;
+    @media (max-width: 800px) {
+      padding: 250px 0;
+    }
 
     @keyframes visible {
       from {
@@ -251,7 +262,7 @@
     color: $colorIntroTitle;
     font-size: 100px;
     text-transform: uppercase;
-    @media (max-width: 500px) {
+    @media (max-width: 1200px) {
       font-size: 50px;
     }
   }
