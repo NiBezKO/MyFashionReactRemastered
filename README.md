@@ -1,3 +1,6 @@
+Интернет-магазин одежды на React. Используемые технологии: React, Redux-Toolkit. В проекте реализована сортировка товара по популярности, цене от большего к меньшему так же по убыванию. Фильтрация по мужской и женской одежде. Добавление в корзину и удаление из корзины. Добавление в избранное.
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
