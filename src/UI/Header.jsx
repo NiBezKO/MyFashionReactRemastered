@@ -90,7 +90,7 @@ const Header = () => {
             </svg>
           </>
         )}
-        {openMenu && <BurgerMenu />}
+        {openMenu && <BurgerMenu setOpenMenu={setOpenMenu} />}
         <div className="header__favorites header-favorites">
           <Link to="/favorites">
             <svg

@@ -25,26 +25,25 @@ const Main = () => {
             </div>
             <ul className="list">
               <li className="list__item list-item">
-                <a href="FullItem.html">
-                  <div className="list-item__top">
-                    <img
-                      src="	https://img.ostin.com/upload/mdm/media_content/resize/dd0/293_387_5c45/73158610299.jpg"
-                      alt="рубашка"
-                      className="list-item__img"
-                    />
-                    <div className="list-item__content">
-                      <svg
-                        className="row"
-                        width="32"
-                        height="24"
-                        viewBox="0 0 32 24"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path d="M0 12H31M31 12L20.186 1M31 12L20.186 23" stroke="white" />
-                      </svg>
-                    </div>
+                <div className="list-item__top">
+                  <img
+                    src="	https://img.ostin.com/upload/mdm/media_content/resize/dd0/293_387_5c45/73158610299.jpg"
+                    alt="рубашка"
+                    className="list-item__img"
+                  />
+                  <div className="list-item__content">
+                    <svg
+                      className="row"
+                      width="32"
+                      height="24"
+                      viewBox="0 0 32 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <path d="M0 12H31M31 12L20.186 1M31 12L20.186 23" stroke="white" />
+                    </svg>
                   </div>
-                </a>
+                </div>
+
                 <div className="list-item__inner">
                   <h3 className="list-item__title">Базовая мужская рубашка</h3>
                   <span className="list-item__price">Цена: 1900</span>
@@ -52,26 +51,25 @@ const Main = () => {
                 </div>
               </li>
               <li className="list__item list-item">
-                <a href="FullItem.html">
-                  <div className="list-item__top">
-                    <img
-                      src="	https://img.ostin.com/upload/mdm/media_content/resize/2e4/293_387_7d91/62757820299.jpg"
-                      alt=""
-                      className="list-item__img"
-                    />
-                    <div className="list-item__content">
-                      <svg
-                        className="row"
-                        width="32"
-                        height="24"
-                        viewBox="0 0 32 24"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path d="M0 12H31M31 12L20.186 1M31 12L20.186 23" stroke="white" />
-                      </svg>
-                    </div>
+                <div className="list-item__top">
+                  <img
+                    src="	https://img.ostin.com/upload/mdm/media_content/resize/2e4/293_387_7d91/62757820299.jpg"
+                    alt=""
+                    className="list-item__img"
+                  />
+                  <div className="list-item__content">
+                    <svg
+                      className="row"
+                      width="32"
+                      height="24"
+                      viewBox="0 0 32 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <path d="M0 12H31M31 12L20.186 1M31 12L20.186 23" stroke="white" />
+                    </svg>
                   </div>
-                </a>
+                </div>
+
                 <div className="list-item__inner">
                   <h3 className="list-item__title">Укороченная толстовка из френч-терри</h3>
                   <span className="list-item__price">Цена: 1900</span>
@@ -79,26 +77,25 @@ const Main = () => {
                 </div>
               </li>
               <li className="list__item list-item">
-                <a href="FullItem.html">
-                  <div className="list-item__top">
-                    <img
-                      src="	https://img.ostin.com/upload/mdm/media_content/resize/6ff/293_387_1e9f/74707000299.jpg"
-                      alt=""
-                      className="list-item__img"
-                    />
-                    <div className="list-item__content">
-                      <svg
-                        className="row"
-                        width="32"
-                        height="24"
-                        viewBox="0 0 32 24"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path d="M0 12H31M31 12L20.186 1M31 12L20.186 23" stroke="white" />
-                      </svg>
-                    </div>
+                <div className="list-item__top">
+                  <img
+                    src="	https://img.ostin.com/upload/mdm/media_content/resize/6ff/293_387_1e9f/74707000299.jpg"
+                    alt=""
+                    className="list-item__img"
+                  />
+                  <div className="list-item__content">
+                    <svg
+                      className="row"
+                      width="32"
+                      height="24"
+                      viewBox="0 0 32 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <path d="M0 12H31M31 12L20.186 1M31 12L20.186 23" stroke="white" />
+                    </svg>
                   </div>
-                </a>
+                </div>
+
                 <div className="list-item__inner">
                   <h3 className="list-item__title">Юбка-шорты из укороченной поливискозы</h3>
                   <span className="list-item__price">Цена: 1999</span>
@@ -106,26 +103,25 @@ const Main = () => {
                 </div>
               </li>
               <li className="list__item list-item">
-                <a href="FullItem.html">
-                  <div className="list-item__top">
-                    <img
-                      src="	https://img.ostin.com/upload/mdm/media_content/resize/0b8/293_387_b985/70927250299.jpg"
-                      alt=""
-                      className="list-item__img"
-                    />
-                    <div className="list-item__content">
-                      <svg
-                        className="row"
-                        width="32"
-                        height="24"
-                        viewBox="0 0 32 24"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path d="M0 12H31M31 12L20.186 1M31 12L20.186 23" stroke="white" />
-                      </svg>
-                    </div>
+                <div className="list-item__top">
+                  <img
+                    src="	https://img.ostin.com/upload/mdm/media_content/resize/0b8/293_387_b985/70927250299.jpg"
+                    alt=""
+                    className="list-item__img"
+                  />
+                  <div className="list-item__content">
+                    <svg
+                      className="row"
+                      width="32"
+                      height="24"
+                      viewBox="0 0 32 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <path d="M0 12H31M31 12L20.186 1M31 12L20.186 23" stroke="white" />
+                    </svg>
                   </div>
-                </a>
+                </div>
+
                 <div className="list-item__inner">
                   <h3 className="list-item__title">Джемпер с вискозой</h3>
                   <span className="list-item__price">Цена: 2000</span>

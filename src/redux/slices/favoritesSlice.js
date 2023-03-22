@@ -9,9 +9,9 @@ export const favoritesSlice = createSlice({
   initialState,
   reducers: {
     addToFavorite(state, action) {
-      const findItem = state.favoritesItems.find((obj) => obj.id === state.payload.id);
+      const findItem = state.favoritesItems.find((obj) => obj.id === state.payload);
       if (findItem) {
-        findItem.filter((obj) => obj.id === action.payload.id);
+        return state.favoritesItems.filter((obj) => obj.id !== action.payload);
       } else {
         state.favoritesItems.push({
           ...action.payload,

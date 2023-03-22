@@ -2,12 +2,12 @@ import React from 'react';
 import styles from './BurgerMenu.module.scss';
 import { Link } from 'react-router-dom';
 
-const BurgerMenu = () => {
+const BurgerMenu = ({ setOpenMenu }) => {
   return (
     <div className={styles.burgerMenu}>
       <ul className={styles.burgerMenu__list}>
         <li className={styles.burgerMenu__item}>
-          <Link className={styles.burgerMenu__link} to="/">
+          <Link onClick={() => setOpenMenu(false)} className={styles.burgerMenu__link} to="/">
             Главная
             <svg
               className={styles.burgerMenu__svg}
@@ -19,7 +19,7 @@ const BurgerMenu = () => {
         </li>
 
         <li className={styles.burgerMenu__item}>
-          <Link className={styles.burgerMenu__link} to="/shop">
+          <Link onClick={() => setOpenMenu(false)} className={styles.burgerMenu__link} to="/shop">
             Магазин
             <svg
               className={styles.burgerMenu__svg}
@@ -31,7 +31,7 @@ const BurgerMenu = () => {
         </li>
 
         <li className={styles.burgerMenu__item}>
-          <Link className={styles.burgerMenu__link} to="/about">
+          <Link onClick={() => setOpenMenu(false)} className={styles.burgerMenu__link} to="/about">
             О бренде
             <svg
               className={styles.burgerMenu__svg}
@@ -43,7 +43,10 @@ const BurgerMenu = () => {
         </li>
 
         <li className={styles.burgerMenu__item}>
-          <Link className={styles.burgerMenu__link} to="/contacts">
+          <Link
+            onClick={() => setOpenMenu(false)}
+            className={styles.burgerMenu__link}
+            to="/contacts">
             Контакты
             <svg
               className={styles.burgerMenu__svg}
