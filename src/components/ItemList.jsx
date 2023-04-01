@@ -34,6 +34,7 @@ const ItemList = ({ id, imageUrl, title, sizes, price }) => {
       title,
       imageUrl,
       price,
+
       // size:  activeSize,
       sizes,
     };

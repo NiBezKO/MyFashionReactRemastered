@@ -27,6 +27,7 @@ const Main = () => {
               <li className="list__item list-item">
                 <div className="list-item__top">
                   <img
+                    loading="lazy"
                     src="	https://img.ostin.com/upload/mdm/media_content/resize/dd0/293_387_5c45/73158610299.jpg"
                     alt="рубашка"
                     className="list-item__img"
@@ -53,6 +54,7 @@ const Main = () => {
               <li className="list__item list-item">
                 <div className="list-item__top">
                   <img
+                    loading="lazy"
                     src="	https://img.ostin.com/upload/mdm/media_content/resize/2e4/293_387_7d91/62757820299.jpg"
                     alt=""
                     className="list-item__img"
@@ -71,7 +73,7 @@ const Main = () => {
                 </div>
 
                 <div className="list-item__inner">
-                  <h3 className="list-item__title">Укороченная толстовка из френч-терри</h3>
+                  <h3 className="list-item__title">Укороченная толстовка </h3>
                   <span className="list-item__price">Цена: 1900</span>
                   <button className="list-item__btn">В корзину</button>
                 </div>
@@ -79,6 +81,7 @@ const Main = () => {
               <li className="list__item list-item">
                 <div className="list-item__top">
                   <img
+                    loading="lazy"
                     src="	https://img.ostin.com/upload/mdm/media_content/resize/6ff/293_387_1e9f/74707000299.jpg"
                     alt=""
                     className="list-item__img"
@@ -97,7 +100,7 @@ const Main = () => {
                 </div>
 
                 <div className="list-item__inner">
-                  <h3 className="list-item__title">Юбка-шорты из укороченной поливискозы</h3>
+                  <h3 className="list-item__title">Юбка-шорты из поливискозы</h3>
                   <span className="list-item__price">Цена: 1999</span>
                   <button className="list-item__btn">В корзину</button>
                 </div>
@@ -105,6 +108,7 @@ const Main = () => {
               <li className="list__item list-item">
                 <div className="list-item__top">
                   <img
+                    loading="lazy"
                     src="	https://img.ostin.com/upload/mdm/media_content/resize/0b8/293_387_b985/70927250299.jpg"
                     alt=""
                     className="list-item__img"
