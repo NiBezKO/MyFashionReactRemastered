@@ -44,7 +44,6 @@ const Main = () => {
                     </svg>
                   </div>
                 </div>
-
                 <div className="list-item__inner">
                   <h3 className="list-item__title">Базовая мужская рубашка</h3>
                   <span className="list-item__price">Цена: 1900</span>
