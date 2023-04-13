@@ -3,12 +3,30 @@
 .contacts {
   margin-top: 194px;
 
-  &__title {
-    font-size: 55px;
-    line-height: 60px;
-    font-weight: 500;
-    text-align: left;
+  &__top {
+    display: flex;
+    flex-direction: column;
     margin-bottom: 264px;
+
+    h1 {
+      font-size: 55px;
+      line-height: 60px;
+      font-weight: 500;
+      text-align: left;
+    }
+
+    p {
+      margin-top: 15px;
+      margin-right: auto;
+      text-align: left;
+      font-size: 20px;
+      font-weight: 400;
+      cursor: pointer;
+      transition: color rgb(160, 159, 159) 0.5s ease;
+      &:hover {
+        color: rgb(160, 159, 159);
+      }
+    }
   }
 
   &-info {

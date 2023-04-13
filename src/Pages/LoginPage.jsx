@@ -5,13 +5,34 @@ import { setLoginIn } from '../redux/slices/authorizationSlice';
 const LoginPage = () => {
   const dispatch = useDispatch();
   const loggedIn = useSelector((state) => state.authorization.loginIn);
-  //const [isLoggedIn, setIsLoggedIn] = React.useState(false);
+  const [isLoggedIn, setIsLoggedIn] = React.useState(false);
   const [login, setLogin] = React.useState('');
   const [pass, setPass] = React.useState('');
 
+  // const [loginError, setLoginError] = React.useState();
+  // const [formValid, setFormValid] = React.useState(false);
+
+  // const onChangeLogin = (event) => {
+  //   setLogin(event.target.value);
+  //   const login = 'user26';
+  //   if (!login.test(String(event.target.value))) {
+  //     alert('Некорректный логин');
+  //   } else {
+  //     alert('правильно');
+  //   }
+  // };
+
+  // const blurHandler = (event) => {
+  //   // eslint-disable-next-line
+  //   switch (event.target.login) {
+  //     case 'login':
+  //       alert('Логин не верен');
+  //   }
+  // };
+
   const user = {
-    login: 'user',
-    pass: 'pass',
+    iserName: login,
+    password: pass,
   };
 
   const onChangeLogin = (event) => {

@@ -1,4 +1,5 @@
 import React, { useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 import ItemList from '../components/ItemList';
 import Categories from '../components/Categories';
@@ -13,6 +14,7 @@ import { setCategoryId } from '../redux/slices/filterSlice';
 const Shop = () => {
   const { categoryId, sort } = useSelector((state) => state.filter);
   const sortType = sort.sortProperty;
+  const navigate = useNavigate();
   //const products = useSelector((state) => state.products.products);
   const dispatch = useDispatch();
 
@@ -33,6 +35,8 @@ const Shop = () => {
   const onClickCategory = (id) => {
     dispatch(setCategoryId(id));
   };
+
+  const goBack = () => navigate(-1);
 
   // const getProducts =
   //   (async () => {
@@ -82,7 +86,10 @@ const Shop = () => {
       <div className="container">
         <div className="shop">
           <div className="shop__top shop-top">
-            <h2 className="shop-top__title">Магазин</h2>
+            <div className="shop-top__inner">
+              <h1 className="shop-top__title">Магазин</h1>
+              <p onClick={goBack}>Назад</p>
+            </div>
             <div className="shop-top__search">
               <svg
                 className="shop-top__icon"

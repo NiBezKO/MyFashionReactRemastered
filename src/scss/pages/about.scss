@@ -3,12 +3,30 @@
 .about {
   margin-top: 196px;
 
-  &__title {
-    text-align: left;
-    font-size: 55px;
-    font-weight: 500;
-    @media (max-width: 900px) {
-      text-align: center;
+  &__top {
+    display: flex;
+    flex-direction: column;
+
+    h1 {
+      text-align: left;
+      font-size: 55px;
+      font-weight: 500;
+      @media (max-width: 900px) {
+        text-align: center;
+      }
+    }
+
+    p {
+      margin-top: 15px;
+      margin-right: auto;
+      text-align: left;
+      font-size: 20px;
+      font-weight: 400;
+      cursor: pointer;
+      transition: color rgb(160, 159, 159) 0.5s ease;
+      &:hover {
+        color: rgb(160, 159, 159);
+      }
     }
   }
 

@@ -1,12 +1,19 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const About = () => {
+  const navigate = useNavigate();
+
+  const goBack = () => navigate(-1);
   return (
     <main>
       <section>
         <div className="container">
           <div className="about">
-            <h2 className="about__title">О бренде</h2>
+            <div className="about__top">
+              <h1>О бренде</h1>
+              <p onClick={goBack}>Назад</p>
+            </div>
             <div className="about__content about-content">
               <div className="about-content__item">
                 <div className="about-content__inner">

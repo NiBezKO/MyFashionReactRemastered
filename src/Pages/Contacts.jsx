@@ -1,6 +1,9 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Contacts = () => {
+  const navigate = useNavigate();
+
   const [name, setName] = React.useState('');
   const [email, setEmail] = React.useState('');
   const [phone, setPhone] = React.useState('');
@@ -17,7 +20,7 @@ const Contacts = () => {
     setName(e.target.value);
     const re = /^[А-ЯЁ][а-яё]+$/;
     if (!re.test(String(e.target.value))) {
-      setNameError('Некорректное имя');
+      setNameError('Некорректное имя, имя должно быть написано с заглавной буквы!');
     } else {
       setNameError('');
     }
@@ -73,11 +76,16 @@ const Contacts = () => {
     setSuccess(true);
   };
 
+  const goBack = () => navigate(-1);
+
   return (
     <main>
       <div className="container">
         <div className="contacts">
-          <h2 className="contacts__title">Контакты</h2>
+          <div className="contacts__top">
+            <h1 className="contacts__title">Контакты</h1>
+            <p onClick={goBack}>Назад</p>
+          </div>
           <section className="contacts__info contacts-info">
             <div className="contacts-info__left">
               <p>Телефон</p>
