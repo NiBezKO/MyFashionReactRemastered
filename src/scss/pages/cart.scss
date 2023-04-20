@@ -58,14 +58,27 @@
   &__title {
     font-size: 18px;
     font-weight: 500;
+    flex-grow: 1;
   }
 
-  b {
-    font-size: 15px;
-    margin: 0 7px 0 7px;
+  &__price {
+    @media (max-width: 800px) {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+    }
+    b {
+      font-size: 15px;
+      margin: 0 7px 0 7px;
+    }
   }
 
   &__count {
+    display: flex;
+    align-items: center;
+    @media (max-width: 900px) {
+      flex-direction: column;
+    }
     button {
       width: 40px;
       height: 40px;
@@ -119,6 +132,10 @@
 .cart_bottom-buttons {
   display: flex;
   justify-content: space-between;
+  @media (max-width: 700px) {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
 
   button {
     width: 243px;
@@ -136,6 +153,9 @@
     }
     &:active {
       transform: translateY(1px);
+    }
+    @media (max-width: 700px) {
+      margin-bottom: 25px;
     }
   }
 }
