@@ -118,3 +118,9 @@
     }
   }
 }
+
+.fitem__btn-container {
+  @media (max-width: 450px) {
+    flex-direction: column;
+  }
+}
