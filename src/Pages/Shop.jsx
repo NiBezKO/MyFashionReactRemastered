@@ -9,7 +9,7 @@ import axios from 'axios';
 
 import { useSelector, useDispatch } from 'react-redux';
 import { setCategoryId } from '../redux/slices/filterSlice';
-//import { setProducts } from '../redux/slices/productSlice';
+//import { setProducts, fetchProducts } from '../redux/slices/productSlice';
 
 const Shop = () => {
   const { categoryId, sort } = useSelector((state) => state.filter);
