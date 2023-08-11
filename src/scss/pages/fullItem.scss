@@ -24,6 +24,10 @@
     @media (max-width: 750px) {
       max-width: 320px;
     }
+
+    @media (max-width: 450px) {
+      margin: auto;
+    }
   }
 
   &__btn-container {
