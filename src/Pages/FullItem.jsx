@@ -4,12 +4,14 @@ import axios from 'axios';
 
 import { useParams } from 'react-router-dom';
 
+const sizesClothes = ['M', 'L', 'XL', 'XL'];
+
 const FullItem = ({ sizes }) => {
   console.log(sizes);
   const { id } = useParams();
 
   const [pageItem, setPageItem] = React.useState();
-  //const [activeSize, setActiveSize] = React.useState();
+  const [activeSize, setActiveSize] = React.useState(0);
 
   React.useEffect(() => {
     async function fetchItem() {
@@ -29,9 +31,9 @@ const FullItem = ({ sizes }) => {
     return 'Загрузка...';
   }
 
-  // const onChangeSize = (i) => {
-  //   setActiveSize(i);
-  // };
+  const onChangeSize = (i) => {
+    setActiveSize(i);
+  };
 
   return (
     <main>
@@ -45,19 +47,19 @@ const FullItem = ({ sizes }) => {
                 <p class="fitem-inner__price">{pageItem.price}</p>
                 <h4>Выберите размер</h4>
                 <ul class="fitem-inner__list">
-                  {/* {sizes.map((item, i) => (
+                  {sizesClothes.map((item, i) => (
                     <li
                       key={i}
                       onClick={() => onChangeSize(i)}
                       className={activeSize === i ? 'active' : ''}>
-                      {item.sizes}
+                      {item}
                     </li>
-                  ))} */}
-                  <li class="active">S</li>
+                  ))}
+                  {/* <li class="active">S</li>
                   <li>M</li>
                   <li>L</li>
                   <li>XL</li>
-                  <li>XXL</li>
+                  <li>XXL</li> */}
                 </ul>
 
                 <div class="fitem-inner__order">
