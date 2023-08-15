@@ -9,9 +9,18 @@ const Header = () => {
   const totalCount = items.reduce((sum, item) => sum + item.count, 0);
   const loggedIn = useSelector((state) => state.authorization.loginIn);
   const [openMenu, setOpenMenu] = React.useState(false);
+  const isMounted = React.useRef(false);
 
   const location = useLocation();
   console.log(location);
+
+  React.useEffect(() => {
+    if (isMounted.current) {
+      const json = JSON.stringify(items);
+      localStorage.setItem('cart', json);
+    }
+    isMounted.current = true;
+  }, [items]);
   return (
     <header className="header">
       <div className="header__inner header-inner">

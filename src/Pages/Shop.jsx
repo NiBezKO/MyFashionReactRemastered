@@ -24,6 +24,7 @@ const Shop = () => {
   const [products, setProducts] = React.useState([]);
   const [searchValue, setSearchValue] = React.useState('');
   const [isLoading, setIsLoading] = React.useState(true);
+  const [visible, setVisible] = React.useState(1);
   // const [page, setPage] = React.useState(1);
   // const [totalPage, setTotalPage] = React.useState(3);
   const inputRef = useRef();
@@ -88,6 +89,14 @@ const Shop = () => {
   //   getProducts();
   // }, [getProducts]);
 
+  const showMoreProducts = () => {
+    setVisible((prevValue) => prevValue + 1);
+  };
+
+  const backPage = () => {
+    setVisible((prevValue) => prevValue - 1);
+  };
+
   //&page=${page}&limit=10
 
   React.useEffect(() => {
@@ -98,7 +107,7 @@ const Shop = () => {
     try {
       axios
         .get(
-          `https://637fa1022f8f56e28e925aec.mockapi.io/clothingList?${category}&sortBy=${sortBy}&order=${order}`,
+          `https://637fa1022f8f56e28e925aec.mockapi.io/clothingList?${category}&sortBy=${sortBy}&order=${order}&page=${visible}&limit=9`,
         )
         .then((res) => {
           setProducts(res.data);
@@ -109,7 +118,7 @@ const Shop = () => {
     } catch (error) {
       alert('Не удалось загрузить товары');
     }
-  }, [categoryId, sortType]);
+  }, [categoryId, sortType, visible]);
 
   return (
     <main>
@@ -177,9 +186,27 @@ const Shop = () => {
         )} */}
 
         {/* {page < 3 ? ( */}
-        {/* <button className="btn-more" onClick={onChangePage}>
-          Ещё
-        </button> */}
+
+        {visible == 1 ? (
+          <button className="btn-more" disabled onClick={backPage}>
+            назад
+          </button>
+        ) : (
+          <button className="btn-more" onClick={backPage}>
+            назад
+          </button>
+        )}
+
+        {visible < 3 ? (
+          <button className="btn-more" onClick={showMoreProducts}>
+            Ещё
+          </button>
+        ) : (
+          <button className="btn-more" disabled onClick={showMoreProducts}>
+            Ещё
+          </button>
+        )}
+
         {/* ) : null} */}
       </div>
     </main>
