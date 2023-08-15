@@ -1,6 +1,6 @@
 import React from 'react';
 import style from './Sort.module.scss';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { setSort } from '../../redux/slices/filterSlice';
 
 export const sortList = [
@@ -9,9 +9,10 @@ export const sortList = [
   { name: 'убыванию цены', sortProperty: 'price' },
 ];
 
-const Sort = () => {
+const Sort = React.memo(({ value }) => {
   const dispatch = useDispatch();
-  const sort = useSelector((state) => state.filter.sort);
+  //мы из родителя. не из менеджера, дастём параметры сортировки(value)
+  // const sort = useSelector((state) => state.filter.sort); это нам не надо
 
   const [open, setOpen] = React.useState(false);
 
@@ -25,7 +26,7 @@ const Sort = () => {
       <div className={style.sort__inner}>
         <div className={style.sort__label}>
           <b>Сортировка по:</b>
-          <span onClick={() => setOpen(!open)}>{sort.name}</span>
+          <span onClick={() => setOpen(!open)}>{value.name}</span>
         </div>
         {open ? (
           <div className={style.sort__popup}>
@@ -34,7 +35,7 @@ const Sort = () => {
                 <li
                   key={i}
                   onClick={() => onClickSort(obj)}
-                  className={sort.sortProperty === obj.sortProperty ? style.active : null}>
+                  className={value.sortProperty === obj.sortProperty ? style.active : null}>
                   {obj.name}
                 </li>
               ))}
@@ -44,6 +45,6 @@ const Sort = () => {
       </div>
     </div>
   );
-};
+});
 
 export default Sort;

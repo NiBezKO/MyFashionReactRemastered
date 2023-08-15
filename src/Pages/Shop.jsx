@@ -1,5 +1,6 @@
 import React, { useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
+// import Pagination from '../components/paginations/Pagination';
 
 import ItemList from '../components/ItemList';
 import Categories from '../components/Categories';
@@ -11,6 +12,8 @@ import { useSelector, useDispatch } from 'react-redux';
 import { setCategoryId } from '../redux/slices/filterSlice';
 //import { setProducts, fetchProducts } from '../redux/slices/productSlice';
 
+// const ROWS_PER_PAGE = 10;
+
 const Shop = () => {
   const { categoryId, sort } = useSelector((state) => state.filter);
   const sortType = sort.sortProperty;
@@ -21,7 +24,11 @@ const Shop = () => {
   const [products, setProducts] = React.useState([]);
   const [searchValue, setSearchValue] = React.useState('');
   const [isLoading, setIsLoading] = React.useState(true);
+  // const [page, setPage] = React.useState(1);
+  // const [totalPage, setTotalPage] = React.useState(3);
   const inputRef = useRef();
+
+  // const getTotalPageCount = (rowCount) => Math.ceil(rowCount / ROWS_PER_PAGE);
 
   const onChangeValue = (event) => {
     setSearchValue(event.target.value);
@@ -32,9 +39,28 @@ const Shop = () => {
     inputRef.current.focus();
   };
 
-  const onClickCategory = (id) => {
+  const onClickCategory = React.useCallback((id) => {
     dispatch(setCategoryId(id));
-  };
+  }, []);
+
+  // const onChangePage = (page) => {
+  //   dispatch(setCurrentPage(page));
+  // };
+
+  // const handleNextPageClick = React.useCallback(() => {
+  //   const current = page;
+  //   const next = current + 1;
+  //   const total = products ? getTotalPageCount(products.count) : current;
+
+  //   setPage(next <= total ? next : current);
+  // }, [page, products]);
+
+  // const handlePrevPageClick = React.useCallback(() => {
+  //   const current = page;
+  //   const prev = current - 1;
+
+  //   setPage(prev > 0 ? prev : current);
+  // }, [page]);
 
   const goBack = () => navigate(-1);
 
@@ -62,6 +88,8 @@ const Shop = () => {
   //   getProducts();
   // }, [getProducts]);
 
+  //&page=${page}&limit=10
+
   React.useEffect(() => {
     setIsLoading(true);
     const order = sortType.includes('-') ? 'asc' : 'desc';
@@ -74,6 +102,8 @@ const Shop = () => {
         )
         .then((res) => {
           setProducts(res.data);
+          // setProducts((pre) => [...pre, ...res.data]);
+          // setTotalPage(page + 1);
         })
         .finally(() => setIsLoading(false));
     } catch (error) {
@@ -120,7 +150,7 @@ const Shop = () => {
         </div>
         <div className="shop__catalog-container">
           <Categories categoryId={categoryId} onClickCategory={onClickCategory} />
-          <Sort />
+          <Sort value={sort} />
         </div>
         <ul className="shopList">
           {isLoading
@@ -134,6 +164,23 @@ const Shop = () => {
                 })
                 .map((obj) => <ItemList key={obj.id} {...obj} />)}
         </ul>
+        {/* {products && (
+          <Pagination
+            onNextPageClick={handleNextPageClick}
+            onPrevPageClick={handlePrevPageClick}
+            disable={{
+              left: page === 1,
+              right: page === getTotalPageCount(products.count),
+            }}
+            nav={{ current: page, total: getTotalPageCount(products.count) }}
+          />
+        )} */}
+
+        {/* {page < 3 ? ( */}
+        {/* <button className="btn-more" onClick={onChangePage}>
+          Ещё
+        </button> */}
+        {/* ) : null} */}
       </div>
     </main>
   );
