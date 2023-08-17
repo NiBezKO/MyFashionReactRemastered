@@ -20,7 +20,7 @@ const Cart = () => {
     }
   };
 
-  if (items == 0) {
+  if (items === 0) {
     return <CartEmpty />;
   }
 

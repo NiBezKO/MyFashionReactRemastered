@@ -10,7 +10,7 @@ import axios from 'axios';
 
 import { useSelector, useDispatch } from 'react-redux';
 import { setCategoryId } from '../redux/slices/filterSlice';
-//import { setProducts, fetchProducts } from '../redux/slices/productSlice';
+import { fetchProducts } from '../redux/slices/productSlice';
 
 // const ROWS_PER_PAGE = 10;
 
@@ -105,16 +105,12 @@ const Shop = () => {
     const sortBy = sortType.replace('-', '');
     const category = categoryId > 0 ? `category=${categoryId}` : '';
     try {
-      axios
-        .get(
-          `https://637fa1022f8f56e28e925aec.mockapi.io/clothingList?${category}&sortBy=${sortBy}&order=${order}&page=${visible}&limit=9`,
-        )
-        .then((res) => {
-          setProducts(res.data);
-          // setProducts((pre) => [...pre, ...res.data]);
-          // setTotalPage(page + 1);
-        })
-        .finally(() => setIsLoading(false));
+      dispatch(fetchProducts({ order, sortBy, category })).then(
+        (res) => setProducts(res.payload)
+      )
+      .finally(
+        () => setIsLoading(false)
+      );
     } catch (error) {
       alert('Не удалось загрузить товары');
     }
@@ -162,7 +158,7 @@ const Shop = () => {
           <Sort value={sort} />
         </div>
         <ul className="shopList">
-          {isLoading
+          {isLoading && products
             ? [...new Array(6)].map((_, index) => <Skeleton key={index} />)
             : products
                 .filter((item) => {
@@ -187,7 +183,7 @@ const Shop = () => {
 
         {/* {page < 3 ? ( */}
 
-        {visible == 1 ? (
+        {visible === 1 ? (
           <button className="btn-more" disabled onClick={backPage}>
             назад
           </button>
